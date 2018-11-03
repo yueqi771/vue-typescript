@@ -1,4 +1,4 @@
-import TYPES from './types';
+import TYPES from './type';
 import { MutationTree } from 'vuex';
 
 const mutations: MutationTree<any> = {
@@ -7,4 +7,4 @@ const mutations: MutationTree<any> = {
     }
 }
 
-export default mutations
+export default mutations;

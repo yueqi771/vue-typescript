@@ -1,5 +1,5 @@
 import { ActionTree } from 'vuex';
-import TYPES from './types';
+import TYPES from './type';
 
 const actions: ActionTree<any, any> = {
     // 更新用户信息
