@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import actions from './actions'
-import mutations from './mutations'
+import actions from './action';
+import mutations from './mutation';
 import Vuex,  { ActionTree, MutationTree } from 'vuex';
 
 Vue.use(Vuex);
