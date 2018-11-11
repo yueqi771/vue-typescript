@@ -6,14 +6,11 @@ import Vuex,  { ActionTree, MutationTree } from 'vuex';
 Vue.use(Vuex);
 
 interface State {
-    userData: object,
+    userData: StoreState.UserData[],
 }
 
 let state: State = {
-    userData: {
-        name: "葛清霏",
-        skill: "偃甲术"
-    }
+    userData: []
 }
 
 export default new Vuex.Store({

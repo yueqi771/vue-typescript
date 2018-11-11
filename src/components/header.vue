@@ -9,12 +9,12 @@
     import { State, Action, Getter } from "vuex-class";
 
     @Component({
-        props: {
-            name: String,
-        }
+        
     })
     class MyHeader extends Vue{
-
+        @Prop({
+            name: String,
+        })
         // computed
         get nameProps(): void {
             return this.name

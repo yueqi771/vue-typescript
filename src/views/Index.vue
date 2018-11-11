@@ -11,7 +11,7 @@
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import { State, Action, Getter } from "vuex-class";
-    import MyHeader from '../components/header'
+    import MyHeader from '@components/header.vue'
 
     // @Component 修饰符注明了此类为一个 Vue 组件
     @Component({
@@ -20,11 +20,11 @@
         }
     })
     class Index extends Vue {
-        @State userData: object;
-        @Action updateUser: () => void;
+        @State('userData') userData: StoreState.UserData;
+        @Action updateUser: (payload: object) => void;
 
         name: string = "yueqi";
-        skill: array = ['流翼']
+        skill: Array<any> = ['流翼']
 
         // computed
         get MyName(): string {
@@ -40,6 +40,8 @@
         mounted(): void {
             // 更新vuex中的数据
             this.updateUser({name: "十方", skilll: ["豆包"]});
+
+            console.log(this.axios)
 
         }
     }

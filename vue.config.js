@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     pages: {
         index: {
@@ -20,7 +21,46 @@ module.exports = {
         // 输出文件名会被推导为 `subpage.html`。
     },
 
+    configureWebpack: {
+		resolve: {
+			alias: {
+				'@components': path.resolve(__dirname, './src/components'),
+				'@static': path.resolve(__dirname, './src/static')
+			}
+		},
+		module: {
+			rules: [
+				{
+					test: /\.css$/,
+					include: [
+						'/src/',
+						'/node_modules/element-ui/lib/' //增加此项
+					],
+					loader: 'style-loader!css-loader'
+				},
+				{
+					test: /\.js$/,
+    				loader: "babel-loader",
+    				exclude: [
+             			path.join(__dirname, './src/static/fonts/iconfont.js'),
+             			path.join(__dirname, './node_modules'),
+                	],
+            	},
+            	{
+            		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    				loader: 'file-loader',
+				    options: {
+				    	limit: 10000,
+				    	name: 'fonts/[hash:12].[ext]'
+				    }
+            	}
+			]
+        },
+       
+    },
+
     devServer: {
-        port: 3000
+        port: 3000,
+        open: true,
     }
 }
