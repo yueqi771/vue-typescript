@@ -16,16 +16,6 @@ module.exports = {
 			chunks: ['chunk-vendors', 'chunk-common', 'index']
         },
 	},
-	// resolve: {
-    //     alias: {
-    //         "@components": path.resolve(__dirname, "./src/components"),
-    //         "@pages": path.resolve(__dirname, "./src/pages"),
-    //         "@styles": path.resolve(__dirname, "./src/static/css"),
-    //         "@images": path.resolve(__dirname, "./src/static/image"),
-    //         "@utils": path.resolve(__dirname, "./src/utils"),
-    //         "@plugins": path.resolve(__dirname, "./src/plugins")
-    //     }
-    // },
 
     configureWebpack: {
 		resolve: {

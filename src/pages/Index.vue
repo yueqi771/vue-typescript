@@ -9,13 +9,17 @@
     import { State, Action, Getter } from 'vuex-class';
 
     class Index extends Vue {
-        @State userData: object;
-        @Action updateUser: () => void;
+        @State userData: StoreState.UserData;
+        @Action updateUser: (payload: object) => void;
+
 
         // computed
         get MyName(): string {
             return  `你好， ${this.userData.name}`
         }
+        
+
+ 
     }
     export default Index;
 </script>

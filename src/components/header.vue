@@ -14,13 +14,10 @@
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
 
-    @Component({
-        props: {
-            name: String
-        }
-    })
-    class MyHeader extends Vue {
 
+    @Component
+    class MyHeader extends Vue {
+        @Prop() name: string;
     }
 
     export default MyHeader;
